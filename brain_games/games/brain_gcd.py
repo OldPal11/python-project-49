@@ -17,7 +17,7 @@ def play():
         random_number2 = random.randint(1, 100)
         result_gcd = math.gcd(random_number1, random_number2)
         print('Find the greatest common divisor of given numbers.')
-        print('Question: ', random_number1, random_number2)
+        print('Question:', random_number1, random_number2)
         
         answer = int(input('Your answer: '))
         

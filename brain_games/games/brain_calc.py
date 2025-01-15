@@ -20,7 +20,7 @@ def play():
         result_diff = random_number1 - random_number2
         result_mult = random_number1 * random_number2
         print('What is the result of the expression?')
-        print('Question: ', random_number1, random_symbol, random_number2)
+        print('Question:', random_number1, random_symbol, random_number2)
         
         answer = int(input('Your answer: '))
         

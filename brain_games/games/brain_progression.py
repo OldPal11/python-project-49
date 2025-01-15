@@ -21,7 +21,7 @@ def play():
         result = aritmetic_progression[random_index]
         aritmetic_progression[random_index] = '..'
         print('What number is missing in the progression?')
-        print('Question: ', end='')
+        print('Question:', end='')
         for i in aritmetic_progression:
             print(i, end=' ')
         print()

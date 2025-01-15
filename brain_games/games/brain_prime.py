@@ -23,7 +23,7 @@ def play():
         else:
             result = 'no'
         print('Answer "yes" if given number is prime. Otherwise answer "no".')
-        print('Question: ', random_number)
+        print('Question:', random_number)
         answer = input('Your answer: ')
         if answer == result:
             print('Correct!')

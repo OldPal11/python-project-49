@@ -14,7 +14,7 @@ def play():
     while correct_aswers < 3:
         random_number = random.randint(1, 100)
         print('Answer "yes" if the number is even, otherwise answer "no".')
-        print('Question: ', random_number)
+        print('Question:', random_number)
         
         answer = input('Your answer: ')
         

@@ -1,13 +1,17 @@
 import random
 
-from brain_games.games.launch import welcome_user
+from brain_games.games.launch import (
+    RANDOM_MAX,
+    RANDOM_MIN,
+    welcome_user,
+)
 
 
 def play():
     name = welcome_user()
     correct_aswers = 0
     while correct_aswers < 3:
-        random_number = random.randint(1, 100)
+        random_number = random.randint(RANDOM_MIN, RANDOM_MAX)
         is_prime = True
         for i in range(2, random_number):
             if random_number % i == 0:

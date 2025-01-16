@@ -1,14 +1,19 @@
 import random
 
-from brain_games.games.launch import welcome_user
+from brain_games.games.launch import (
+    CORRECT_ANSWERS_TO_WIN,
+    RANDOM_MAX,
+    RANDOM_MIN,
+    welcome_user,
+)
 
 
 def play():
     name = welcome_user()
     correct_answers = 0
-    while correct_answers < 3:
+    while correct_answers < CORRECT_ANSWERS_TO_WIN:
         aritmetic_progression = []
-        start = random.randint(1, 100)
+        start = random.randint(RANDOM_MIN, RANDOM_MAX)
         step = random.randint(1, 10)
         random_index = random.randint(0, 9)
         for i in range(10):

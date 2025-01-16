@@ -1,15 +1,20 @@
 import math
 import random
 
-from brain_games.games.launch import welcome_user
+from brain_games.games.launch import (
+    CORRECT_ANSWERS_TO_WIN,
+    RANDOM_MAX,
+    RANDOM_MIN,
+    welcome_user,
+)
 
 
 def play():
     name = welcome_user()
     correct_answers = 0
-    while correct_answers < 3:
-        random_number1 = random.randint(1, 100)
-        random_number2 = random.randint(1, 100)
+    while correct_answers < CORRECT_ANSWERS_TO_WIN:
+        random_number1 = random.randint(RANDOM_MIN, RANDOM_MAX)
+        random_number2 = random.randint(RANDOM_MIN, RANDOM_MAX)
         result_gcd = math.gcd(random_number1, random_number2)
         print('Find the greatest common divisor of given numbers.')
         print('Question:', random_number1, random_number2)

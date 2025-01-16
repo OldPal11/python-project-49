@@ -1,8 +1,9 @@
 import random
 
 from brain_games.games.launch import (
+    CORRECT_ANSWERS_TO_WIN,
+    MINIMAL_PRIME_NUMBER,
     RANDOM_MAX,
-    RANDOM_MIN,
     welcome_user,
 )
 
@@ -10,10 +11,10 @@ from brain_games.games.launch import (
 def play():
     name = welcome_user()
     correct_aswers = 0
-    while correct_aswers < 3:
-        random_number = random.randint(RANDOM_MIN, RANDOM_MAX)
+    while correct_aswers < CORRECT_ANSWERS_TO_WIN:
+        random_number = random.randint(MINIMAL_PRIME_NUMBER, RANDOM_MAX)
         is_prime = True
-        for i in range(2, random_number):
+        for i in range(MINIMAL_PRIME_NUMBER, random_number):
             if random_number % i == 0:
                 is_prime = False
                 break

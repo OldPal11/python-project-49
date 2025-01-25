@@ -1,34 +1,27 @@
+'''Progression Game: find the missing number in the progression.'''
+
 import random
 
-from brain_games.games.launch import (
-    CORRECT_ANSWERS_TO_WIN,
-    check_answer,
-    congratulations,
-    generate_random,
-    welcome_user,
-)
+from brain_games.games.launch import generate_random
 
 
-def play():
-    name = welcome_user()
-    correct_answers = 0
-    while correct_answers < CORRECT_ANSWERS_TO_WIN:
-        aritmetic_progression = []
-        start = generate_random()
-        step = random.randint(1, 10)
-        random_index = random.randint(0, 9)
-        for i in range(10):
-            aritmetic_progression.append(start + step * i)
-        result = aritmetic_progression[random_index]
-        aritmetic_progression[random_index] = '..'
-        print('What number is missing in the progression?')
-        print('Question: ', end='')
-        for i in aritmetic_progression:
-            print(i, end=' ')
-        print()
-        user_answer = int(input('Your answer: '))    
-       
-        if check_answer(user_answer, result, name):
-            correct_answers += 1
+def game_rules():
+    return 'What number is missing in the progression?'
 
-    congratulations(name)
+
+def generate_round():
+    progression = []
+    progression_step = random.randint(1, 10)
+    progression_length = 10
+    progression_start = generate_random()
+    progression.append(progression_start)
+
+    for i in range(1, progression_length):
+        progression.append(progression[i - 1] + progression_step)
+
+    hidden_element_index = random.randint(0, progression_length - 1)
+    correct_answer = progression[hidden_element_index]
+    progression[hidden_element_index] = '..'
+    question = ' '.join(map(str, progression))
+
+    return question, str(correct_answer)

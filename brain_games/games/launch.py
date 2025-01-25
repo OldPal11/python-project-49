@@ -32,3 +32,18 @@ def check_answer(user_answer, correct_answer, name):
             )
         print(f"Let's try again, {name}!")
         exit()
+
+
+def run_game(generate_round, game_rules):
+    name = welcome_user()
+    print(game_rules) 
+    correct_answers = 0
+
+    while correct_answers < CORRECT_ANSWERS_TO_WIN:
+        question, correct_answer = generate_round()
+        print(f'Question: {question}')
+        user_answer = input('Your answer: ')
+
+        if check_answer(user_answer, correct_answer, name):
+            correct_answers += 1
+    congratulations(name)

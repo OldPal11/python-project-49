@@ -1,9 +1,10 @@
-from brain_games.games.brain_progression import play
+from brain_games.games.brain_progression import game_rules, generate_round
+from brain_games.games.launch import run_game
 
 
 def main():
-    play()
-    
+    run_game(generate_round, game_rules())
+
 
 if __name__ == "__main__":
     main()
